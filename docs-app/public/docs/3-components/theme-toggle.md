@@ -36,6 +36,7 @@ import { ThemeToggle } from '@universal-ember/preem';
 
 * Toggles the theme, managed by ['color-scheme'](https://ember-primitives.pages.dev/6-utils/color-scheme) 
 * Live updates if anything else changes the current color scheme. 
+* Defaults to the user's preferred color scheme.
 
 
 ## Installation 
@@ -72,6 +73,15 @@ none
 ### State Attributes
 
 none
+
+### Styling 
+
+Public selectors:
+
+| key | description |  
+| :---: | :----------- |  
+| `.preem__site-theme-toggle` | Wrapper element around the underlying switch |  
+
 
 ## Accessibility
 

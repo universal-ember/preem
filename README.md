@@ -3,7 +3,7 @@ preem
 
 UI Kit
 
-Docs: https://preem.pages.dev/
+Docs: https://preem-docs-app.vercel.app/3-components/theme-toggle
 
 
 Contributing
