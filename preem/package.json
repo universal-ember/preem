@@ -1,5 +1,5 @@
 {
-  "name": "preem",
+  "name": "@universal-ember/preem",
   "version": "0.1.0",
   "description": "UI Kit for building professional and sleek looking ember apps quickly",
   "type": "module",

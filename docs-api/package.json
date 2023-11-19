@@ -9,7 +9,7 @@
     "_syncPnpm": "pnpm sync-dependencies-meta-injected"
   },
   "dependencies": {
-    "preem": "workspace:*"
+    "@universal-ember/preem": "workspace:*"
   },
   "devDependencies": {
     "@tsconfig/ember": "^3.0.0",

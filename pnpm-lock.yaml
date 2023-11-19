@@ -87,7 +87,7 @@ importers:
 
   docs-api:
     dependencies:
-      preem:
+      '@universal-ember/preem':
         specifier: workspace:*
         version: link:../preem
     devDependencies:
@@ -109,6 +109,9 @@ importers:
 
   docs-app:
     dependencies:
+      '@universal-ember/preem':
+        specifier: workspace:*
+        version: file:preem(@babel/core@7.23.2)(@ember/test-helpers@3.2.0)(@ember/test-waiters@3.1.0)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/environment-ember-loose@1.2.1)(@glint/template@1.2.1)(ember-modifier@4.1.0)(ember-resources@6.4.2)(ember-source@5.4.0)
       assert:
         specifier: ^2.0.0
         version: 2.1.0
@@ -151,9 +154,6 @@ importers:
       path-browserify:
         specifier: ^1.0.1
         version: 1.0.1
-      preem:
-        specifier: workspace:*
-        version: file:preem(@babel/core@7.23.2)(@ember/test-helpers@3.2.0)(@ember/test-waiters@3.1.0)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/environment-ember-loose@1.2.1)(@glint/template@1.2.1)(ember-modifier@4.1.0)(ember-resources@6.4.2)(ember-source@5.4.0)
       reactiveweb:
         specifier: ^0.1.0
         version: 0.1.0(@babel/core@7.23.2)(@ember/test-waiters@3.1.0)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.2.1)(ember-source@5.4.0)
@@ -354,7 +354,7 @@ importers:
         specifier: ^5.89.0
         version: 5.89.0
     dependenciesMeta:
-      preem:
+      '@universal-ember/preem':
         injected: true
 
   preem:
@@ -510,12 +510,12 @@ importers:
 
   test-app:
     dependencies:
+      '@universal-ember/preem':
+        specifier: workspace:*
+        version: file:preem(@babel/core@7.23.2)(@ember/test-helpers@3.2.0)(@ember/test-waiters@3.1.0)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/environment-ember-loose@1.2.1)(@glint/template@1.2.1)(ember-modifier@4.1.0)(ember-resources@6.4.2)(ember-source@5.4.0)
       ember-resources:
         specifier: ^6.4.0
         version: 6.4.2(@babel/core@7.23.2)(@ember/test-waiters@3.1.0)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/template@1.2.1)(ember-source@5.4.0)
-      preem:
-        specifier: workspace:*
-        version: file:preem(@babel/core@7.23.2)(@ember/test-helpers@3.2.0)(@ember/test-waiters@3.1.0)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/environment-ember-loose@1.2.1)(@glint/template@1.2.1)(ember-modifier@4.1.0)(ember-resources@6.4.2)(ember-source@5.4.0)
       qunit-assertions-extra:
         specifier: ^1.0.3
         version: 1.0.3(qunit@2.20.0)
@@ -707,7 +707,7 @@ importers:
         specifier: ^5.89.0
         version: 5.89.0
     dependenciesMeta:
-      preem:
+      '@universal-ember/preem':
         injected: true
 
 packages:
@@ -8678,9 +8678,9 @@ packages:
     peerDependencies:
       '@ember/test-helpers': ^3.2.0
       '@ember/test-waiters': ^3.0.2
-      '@glimmer/component': ^1.1.2
-      '@glimmer/tracking': ^1.1.2
-      '@glint/template': ^1.2.1
+      '@glimmer/component': '>= 1.1.2'
+      '@glimmer/tracking': '>= 1.1.2'
+      '@glint/template': '>= 1.0.0'
       ember-modifier: '>= 4.1.0'
       ember-resources: '>= 6.1.0'
       ember-source: '*'
@@ -17879,7 +17879,7 @@ packages:
   file:preem(@babel/core@7.23.2)(@ember/test-helpers@3.2.0)(@ember/test-waiters@3.1.0)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/environment-ember-loose@1.2.1)(@glint/template@1.2.1)(ember-modifier@4.1.0)(ember-resources@6.4.2)(ember-source@5.4.0):
     resolution: {directory: preem, type: directory}
     id: file:preem
-    name: preem
+    name: '@universal-ember/preem'
     peerDependencies:
       '@ember/test-helpers': ^3.2.0
       '@ember/test-waiters': ^3.0.2

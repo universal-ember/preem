@@ -26,12 +26,12 @@
     "_syncPnpm": "DEBUG=sync-pnpm pnpm sync-dependencies-meta-injected"
   },
   "dependencies": {
-    "preem": "workspace:*",
+    "@universal-ember/preem": "workspace:*",
     "ember-resources": "^6.4.0",
     "qunit-assertions-extra": "^1.0.3"
   },
   "dependenciesMeta": {
-    "preem": {
+    "@universal-ember/preem": {
       "injected": true
     }
   },
