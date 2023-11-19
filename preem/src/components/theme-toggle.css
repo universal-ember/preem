@@ -16,11 +16,12 @@
   }
   label {
     background-color: #111;
-    width: 50px;
-    height: 26px;
+    min-width: 40px;
+    flex-grow: 1;
+    aspect-ratio: 2.1;
     border-radius: 50px;
     position: relative;
-    padding: 5px;
+    padding: 4% 8%;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -30,6 +31,7 @@
   }
   svg {
     fill: currentColor;
+    height: 90%;
   }
   .fa-moon {
     color: #f1c40f;
@@ -39,17 +41,16 @@
   }
   label .ball {
     background-color: #fff;
-    width: 22px;
-    height: 22px;
+    width: 42%;
+    height: 88%;
     position: absolute;
-    left: 2px;
-    top: 2px;
+    left: 3%;
     border-radius: 50%;
     transition: transform 0.2s linear;
   }
 
   input[type='checkbox'][role='switch']:checked + label .ball {
-    transform: translateX(24px);
+    transform: translateX(120%);
   }
 }
 .preem__sr-only {

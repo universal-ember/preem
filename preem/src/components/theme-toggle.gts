@@ -21,8 +21,8 @@ function isDark() {
   return colorScheme.current === 'dark';
 }
 
-export const ThemeToggle: TOC<{}> = <template>
-  <Switch class='preem__site-theme-toggle' as |s|>
+export const ThemeToggle: TOC<{ Element: Element }> = <template>
+  <Switch class='preem__site-theme-toggle' ...attributes as |s|>
     <s.Control name='color-scheme' checked={{(isDark)}} {{on 'change' toggleTheme}} />
     <s.Label>
       <span class='preem__sr-only'>Toggle between light and dark mode</span>

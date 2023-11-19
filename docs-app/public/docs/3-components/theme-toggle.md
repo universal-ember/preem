@@ -3,11 +3,31 @@
 Switches between light mode and dark mode
 
 
-```gjs live preview no-shadow
+```gjs live no-shadow
 import { ThemeToggle } from '@universal-ember/preem';
 
 <template>
-  <ThemeToggle />
+  <div class="demo">
+    <ThemeToggle />
+    <ThemeToggle class="bigger" />
+    <ThemeToggle class="big" />
+  </div>
+
+  <style>
+    .demo {
+      display: flex; 
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+
+      .bigger label {
+        height: 3rem;
+      }
+      .big label {
+        height: 5rem;
+      }
+    }
+  </style>
 </template>
 ```
 
