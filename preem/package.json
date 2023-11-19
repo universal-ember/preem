@@ -1,0 +1,169 @@
+{
+  "name": "preem",
+  "version": "0.1.0",
+  "description": "UI Kit for building professional and sleek looking ember apps quickly",
+  "type": "module",
+  "keywords": [
+    "ember-addon"
+  ],
+  "repository": "https://github.com/universal-ember/preem",
+  "license": "MIT",
+  "author": "nullvoxpopuli",
+  "files": [
+    "addon-main.cjs",
+    "dist",
+    "dist-types"
+  ],
+  "scripts": {
+    "build": "concurrently 'npm:build:*'",
+    "build:js": "rollup --config ./rollup.config.mjs",
+    "build:types": "glint --build",
+    "lint": "pnpm -w exec lint",
+    "lint:fix": "pnpm -w exec lint fix",
+    "lint:js": "pnpm -w exec lint js",
+    "lint:js:fix": "pnpm -w exec lint js:fix",
+    "lint:hbs": "pnpm -w exec lint hbs",
+    "lint:hbs:fix": "pnpm -w exec lint hbs:fix",
+    "lint:package": "pnpm publint",
+    "lint:published-types": "attw *.tgz || exit 0",
+    "lint:prettier:fix": "pnpm -w exec lint prettier:fix",
+    "lint:prettier": "pnpm -w exec lint prettier",
+    "lint:types": "glint",
+    "pack": "pnpm pack",
+    "start": "concurrently 'npm:start:*'",
+    "start:js": "rollup --config --watch",
+    "start:types": "glint --build --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
+    "prepack": "rollup --config"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.23.2",
+    "@embroider/addon-shim": "^1.8.6",
+    "@embroider/macros": "1.13.2",
+    "ember-primitives": "0.9.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.13.0",
+    "@babel/core": "^7.23.2",
+    "@babel/eslint-parser": "^7.22.15",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.23.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/plugin-syntax-decorators": "^7.22.10",
+    "@babel/plugin-transform-class-static-block": "^7.22.11",
+    "@babel/plugin-transform-private-methods": "^7.22.5",
+    "@babel/preset-typescript": "^7.23.2",
+    "@ember/test-helpers": "^3.2.0",
+    "@ember/test-waiters": "^3.1.0",
+    "@embroider/addon-dev": "4.1.2",
+    "@glimmer/component": "^1.1.2",
+    "@glimmer/tracking": "^1.1.2",
+    "@glint/core": "^1.1.0",
+    "@glint/environment-ember-loose": "^1.1.0",
+    "@glint/environment-ember-template-imports": "^1.1.0",
+    "@glint/template": "^1.1.0",
+    "@nullvoxpopuli/eslint-configs": "^3.2.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@tsconfig/ember": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "babel-plugin-ember-template-compilation": "^2.2.1",
+    "concurrently": "^8.2.2",
+    "ember-modifier": "^4.1.0",
+    "ember-resources": "^6.4.0",
+    "ember-source": "~5.4.0",
+    "ember-template-imports": "^3.4.2",
+    "ember-template-lint": "^5.11.2",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-ember": "^11.11.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-ember-template-tag": "^1.1.0",
+    "publint": "^0.2.4",
+    "rollup": "~4.4.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-glimmer-template-tag": "^0.4.1",
+    "typescript": "^5.2.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "version": 2,
+    "type": "addon",
+    "main": "addon-main.cjs",
+    "app-js": {
+      "./components/accordion.js": "./dist/_app_/components/accordion.js",
+      "./components/avatar.js": "./dist/_app_/components/avatar.js",
+      "./components/dialog.js": "./dist/_app_/components/dialog.js",
+      "./components/external-link.js": "./dist/_app_/components/external-link.js",
+      "./components/form.js": "./dist/_app_/components/form.js",
+      "./components/link.js": "./dist/_app_/components/link.js",
+      "./components/popover.js": "./dist/_app_/components/popover.js",
+      "./components/portal-targets.js": "./dist/_app_/components/portal-targets.js",
+      "./components/portal.js": "./dist/_app_/components/portal.js",
+      "./components/progress.js": "./dist/_app_/components/progress.js",
+      "./components/shadowed.js": "./dist/_app_/components/shadowed.js",
+      "./components/switch.js": "./dist/_app_/components/switch.js",
+      "./components/toggle.js": "./dist/_app_/components/toggle.js",
+      "./helpers/service.js": "./dist/_app_/helpers/service.js"
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist-types/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./one-time-password": {
+      "types": "./dist-types/components/one-time-password/index.d.ts",
+      "default": "./dist/components/one-time-password/index.js"
+    },
+    "./*": {
+      "types": "./dist-types/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./test-support": {
+      "types": "./dist-types/test-support/index.d.ts",
+      "default": "./dist/test-support/index.js"
+    },
+    "./addon-main": "./addon-main.cjs"
+  },
+  "typesVersions": {
+    "*": {
+      "test-support": [
+        "dist-types/test-support/index.d.ts"
+      ],
+      "*": [
+        "dist-types/*"
+      ]
+    }
+  },
+  "volta": {
+    "extends": "../package.json"
+  },
+  "peerDependencies": {
+    "@ember/test-helpers": "^3.2.0",
+    "@ember/test-waiters": "^3.0.2",
+    "@glimmer/component": ">= 1.1.2",
+    "@glimmer/tracking": ">= 1.1.2",
+    "@glint/template": ">= 1.0.0",
+    "ember-modifier": ">= 4.1.0",
+    "ember-resources": ">= 6.1.0",
+    "ember-source": ">= 4.12.0"
+  },
+  "peerDependenciesMeta": {
+    "@ember/test-helpers": {
+      "optional": true
+    },
+    "@glint/template": {
+      "optional": true
+    }
+  }
+}

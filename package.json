@@ -1,0 +1,71 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "scripts": {
+    "release": "changeset publish",
+    "build": "turbo run build --output-logs errors-only",
+    "start": "pnpm build; concurrently 'npm:_start:*' --prefix ' ' --restart-after 5000 --restart-tries -1",
+    "_start:docs": "pnpm --filter docs-app start",
+    "_start:tests": "pnpm --filter test-app start",
+    "_start:package": "pnpm --filter 'ember-primitives' start --no-watch.clearScreen",
+    "test": "turbo run test --output-logs errors-only",
+    "lint:fix": "turbo run _:lint:fix --output-logs errors-only",
+    "lint": "turbo run _:lint --output-logs errors-only"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@glint/core": "^1.1.0",
+    "@nullvoxpopuli/dev": "workspace:*",
+    "concurrently": "^8.2.2",
+    "prettier": "^3.0.3",
+    "prettier-plugin-ember-template-tag": "^1.1.0",
+    "turbo": "^1.10.16",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">= 18.*",
+    "yarn": "use pnpm",
+    "npm": "use pnpm"
+  },
+  "volta": {
+    "node": "20.9.0",
+    "pnpm": "8.10.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "@glimmer/validator": "^0.84.2",
+      "@glimmer/interfaces": "^0.84.2",
+      "ember-async-data": "1.0.1",
+      "ember-compatibility-helpers": "1.2.7",
+      "ember-cli-babel": "^8.2.0"
+    },
+    "packageExtensions": {
+      "ember-qunit": {
+        "peerDependencies": {
+          "@ember/test-helpers": "^2.7.0 || >= 3.0.0"
+        }
+      },
+      "ember-headless-form": {
+        "dependencies": {
+          "ember-cached-decorator-polyfill": "*",
+          "ember-async-data": "^1.0.1"
+        }
+      }
+    },
+    "peerDependencyRules": {
+      "allowAny": [
+        "typescript",
+        "ember-source",
+        "@glimmer/compiler",
+        "@glimmer/syntax"
+      ],
+      "ignoreMissing": [
+        "webpack",
+        "rsvp"
+      ]
+    }
+  }
+}

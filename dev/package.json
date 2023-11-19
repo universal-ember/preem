@@ -1,0 +1,42 @@
+{
+  "name": "@nullvoxpopuli/dev",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "bin": {
+    "lint": "./bin/lint.js",
+    "ci-todo": "./bin/todo.js",
+    "unstable": "./bin/use-unstable-embroider.js"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "ember-apply": "^2.10.2",
+    "execa": "^8.0.1",
+    "fs-extra": "^11.1.1",
+    "latest-version": "^7.0.0"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "volta": {
+    "extends": "../package.json"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/eslint-parser": "^7.22.15",
+    "@nullvoxpopuli/eslint-configs": "^3.2.2",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.48.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "lint": "pnpm -w exec lint",
+    "lint:fix": "pnpm -w exec lint fix",
+    "lint:js": "pnpm -w exec lint js",
+    "lint:js:fix": "pnpm -w exec lint js:fix",
+    "lint:prettier:fix": "pnpm -w exec lint prettier:fix",
+    "lint:prettier": "pnpm -w exec lint prettier"
+  }
+}
