@@ -7,6 +7,8 @@ import { Moon, Sun } from './-private/icons';
 
 import type { TOC } from '@ember/component/template-only';
 
+import './theme-toggle.css';
+
 function toggleTheme() {
   if (colorScheme.current === 'dark') {
     colorScheme.update('light');
@@ -20,7 +22,7 @@ function isDark() {
 }
 
 export const ThemeToggle: TOC<{}> = <template>
-  <Switch id='preem__site-theme-toggle' as |s|>
+  <Switch class='preem__site-theme-toggle' as |s|>
     <s.Control name='color-scheme' checked={{(isDark)}} {{on 'change' toggleTheme}} />
     <s.Label>
       <span class='preem__sr-only'>Toggle between light and dark mode</span>

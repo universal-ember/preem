@@ -3,13 +3,11 @@
 Switches between light mode and dark mode
 
 
-```gjs live preview
-import { ThemeToggle } from 'preem';
+```gjs live preview no-shadow
+import { ThemeToggle } from '@universal-ember/preem';
 
 <template>
   <ThemeToggle />
-  </style>
-  
 </template>
 ```
 
@@ -29,17 +27,17 @@ pnpm add preem
 ## Anatomy
 
 ```js 
-import { ThemeToggle } from 'preem';
+import { ThemeToggle } from '@universal-ember/preem';
 ```
 
 or for non-tree-shaking environments:
 ```js 
-import { ThemeToggle } from 'preem/components/theme-toggle';
+import { ThemeToggle } from '@universal-ember/preem/components/theme-toggle';
 ```
 
 
 ```gjs 
-import { ThemeToggle } from 'preem';
+import { ThemeToggle } from '@universal-ember/preem';
 
 <template>
   <ThemeToggle />

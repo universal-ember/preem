@@ -127,6 +127,9 @@ importers:
       ember-modifier:
         specifier: ^4.1.0
         version: 4.1.0(ember-source@5.4.0)
+      ember-primitives:
+        specifier: ^0.9.0
+        version: 0.9.0(@babel/core@7.23.2)(@ember/test-helpers@3.2.0)(@ember/test-waiters@3.1.0)(@glimmer/component@1.1.2)(@glimmer/tracking@1.1.2)(@glint/environment-ember-loose@1.2.1)(@glint/template@1.2.1)(ember-modifier@4.1.0)(ember-resources@6.4.2)(ember-source@5.4.0)
       ember-repl:
         specifier: ^3.0.0-beta.4
         version: 3.0.0-beta.6(@babel/core@7.23.2)(@glimmer/compiler@0.85.12)(@glimmer/component@1.1.2)(@glimmer/syntax@0.85.12)(@glint/template@1.2.1)(ember-resources@6.4.2)(ember-source@5.4.0)

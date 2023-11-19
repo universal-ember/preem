@@ -1,3 +1,4 @@
+import * as preem from '@universal-ember/preem';
 import * as docsSupport from 'docs-app/docs-support';
 import * as docsMarkdown from 'docs-app/markdown';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -28,6 +29,7 @@ export const defaultOptions: Options = {
   importMap: {
     'ember-velcro': emberVelcro,
     'ember-velcro/modifiers/velcro': velcro,
+    '@universal-ember/preem': preem,
     'ember-primitives': emberPrimitives,
     'ember-primitives/color-scheme': colorScheme,
     'ember-headless-form': emberHeadlessForm,

@@ -32,6 +32,7 @@
     "ember-focus-trap": "^1.1.0",
     "ember-headless-form": "^1.0.0-beta.3",
     "ember-modifier": "^4.1.0",
+    "ember-primitives": "^0.9.0",
     "@universal-ember/preem": "workspace:*",
     "ember-repl": "^3.0.0-beta.4",
     "ember-route-template": "^1.0.1",

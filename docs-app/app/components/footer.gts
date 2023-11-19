@@ -1,10 +1,10 @@
 import { on } from '@ember/modifier';
 import { get } from '@ember/object';
 
+import { ThemeToggle } from '@universal-ember/preem';
 import { ExternalLink, service } from 'ember-primitives';
 
 import { Flask, GitHub } from './icons';
-import { ThemeToggle } from './theme-toggle';
 
 export const Footer = <template>
   <footer id='site-footer'>
