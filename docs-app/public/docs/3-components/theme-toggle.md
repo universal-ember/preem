@@ -34,8 +34,8 @@ import { ThemeToggle } from '@universal-ember/preem';
 
 ## Features 
 
-* Full keyboard navigation 
-* Can be controlled or uncontrolled
+* Toggles the theme, managed by ['color-scheme'](https://ember-primitives.pages.dev/6-utils/color-scheme) 
+* Live updates if anything else changes the current color scheme. 
 
 
 ## Installation 
