@@ -1,4 +1,5 @@
 import copy from 'rollup-plugin-copy';
+import { scopedCssUnplugin } from 'ember-scoped-css/build';
 import { babel } from '@rollup/plugin-babel';
 import { Addon } from '@embroider/addon-dev/rollup';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
@@ -23,6 +24,7 @@ export default {
     addon.hbs(),
     // addon.gjs(),
     addon.keepAssets(['**/*.css']),
+    scopedCssUnplugin.rollup(),
     addon.clean(),
     copy({
       targets: [

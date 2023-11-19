@@ -3,7 +3,7 @@
  * but with the addition of fill="currentColor"
  */
 
-import { TOC } from "@ember/component/template-only";
+import type { TOC } from "@ember/component/template-only";
 
 export const Sun: TOC<{}> = <template>
   <svg
