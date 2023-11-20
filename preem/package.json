@@ -1,6 +1,6 @@
 {
   "name": "@universal-ember/preem",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "UI Kit for building professional and sleek looking ember apps quickly",
   "keywords": [
     "ember-addon"
@@ -39,7 +39,7 @@
     "@babel/runtime": "^7.23.2",
     "@embroider/addon-shim": "^1.8.6",
     "@embroider/macros": "1.13.2",
-    "ember-primitives": "^0.10.0"
+    "ember-primitives": "^0.10.1"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.13.0",
