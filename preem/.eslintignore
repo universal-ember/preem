@@ -1,9 +1,11 @@
 # unconventional js
 /blueprints/*/files/
+/unpublished-development-types/
 
 # compiled output
 /dist/
 /dist-types/
+/declarations/
 
 # misc
 /coverage/
