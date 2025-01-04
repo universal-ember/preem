@@ -718,9 +718,6 @@ importers:
       webpack:
         specifier: ^5.97.1
         version: 5.97.1
-    dependenciesMeta:
-      '@universal-ember/preem':
-        injected: true
 
 packages:
 

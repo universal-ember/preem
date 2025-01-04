@@ -11,7 +11,7 @@
   "files": [
     "addon-main.cjs",
     "dist",
-    "dist-types"
+    "declarations"
   ],
   "scripts": {
     "build": "rollup --config ./rollup.config.mjs",
@@ -102,35 +102,18 @@
   },
   "exports": {
     ".": {
-      "types": "./dist-types/index.d.ts",
+      "types": "./declarations/index.d.ts",
       "default": "./dist/index.js"
     },
-    "./one-time-password": {
-      "types": "./dist-types/components/one-time-password/index.d.ts",
-      "default": "./dist/components/one-time-password/index.js"
-    },
     "./*": {
-      "types": "./dist-types/*.d.ts",
+      "types": "./declarations/*.d.ts",
       "default": "./dist/*.js"
     },
     "./test-support": {
-      "types": "./dist-types/test-support/index.d.ts",
+      "types": "./declarations/test-support/index.d.ts",
       "default": "./dist/test-support/index.js"
     },
     "./addon-main": "./addon-main.cjs"
-  },
-  "typesVersions": {
-    "*": {
-      "test-support": [
-        "dist-types/test-support/index.d.ts"
-      ],
-      "*": [
-        "dist-types/*"
-      ]
-    }
-  },
-  "volta": {
-    "extends": "../package.json"
   },
   "peerDependencies": {
     "@ember/test-helpers": ">= 3.2.0",

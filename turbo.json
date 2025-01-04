@@ -26,7 +26,6 @@
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
 {
-  "baseBranch": "origin/main",
   // Additive to package.json and turbo.json
   //
   // https://turbo.build/repo/docs/core-concepts/caching/file-inputs#specifying-additional-inputs
@@ -39,7 +38,7 @@
     ".github/workflows/push-dish.yml",
     ".github/workflows/deploy-preview.yml"
   ],
-  "pipeline": {
+  "tasks": {
     /////////////////////////////////////////////////
     /////////////////////////////////////////////////
     //
@@ -67,7 +66,7 @@
     /////////////////////////////////////////////////
     // development
     "build:dev": {
-      "outputs": ["dist/**", "dist-types/**", "declarations/**"],
+      "outputs": ["dist/**", "declarations/**", "declarations/**"],
       "dependsOn": ["_syncPnpm"]
     },
     "pack": {
@@ -76,7 +75,7 @@
     },
     // production
     "build": {
-      "outputs": ["dist/**", "dist-types/**", "docs.json"],
+      "outputs": ["dist/**", "declarations/**", "docs.json"],
       "dependsOn": ["_syncPnpm"]
     },
     "_syncPnpm": {

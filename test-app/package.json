@@ -20,21 +20,15 @@
     "lint:prettier:fix": "pnpm -w exec lint prettier:fix",
     "lint:prettier": "pnpm -w exec lint prettier",
     "lint:types": "glint",
-    "start": "concurrently 'ember serve' 'pnpm _syncPnpm --watch' --names 'tests serve,tests sync deps'",
+    "start": "ember serve",
     "test": "ember test",
-    "test:ember": "ember test",
-    "_syncPnpm": "DEBUG=sync-pnpm pnpm sync-dependencies-meta-injected"
+    "test:ember": "ember test"
   },
   "dependencies": {
     "@universal-ember/preem": "workspace:*",
     "decorator-transforms": "^2.3.0",
     "ember-resources": "^7.0.3",
     "qunit-assertions-extra": "^1.0.3"
-  },
-  "dependenciesMeta": {
-    "@universal-ember/preem": {
-      "injected": true
-    }
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
