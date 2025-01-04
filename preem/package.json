@@ -1,6 +1,6 @@
 {
   "name": "@universal-ember/preem",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "UI Kit for building professional and sleek looking ember apps quickly",
   "keywords": [
     "ember-addon"
