@@ -1,3 +1,5 @@
+import './theme-toggle.css';
+
 import { on } from '@ember/modifier';
 
 import { Switch } from 'ember-primitives';
@@ -6,8 +8,6 @@ import { colorScheme } from 'ember-primitives/color-scheme';
 import { Moon, Sun } from './-private/icons';
 
 import type { TOC } from '@ember/component/template-only';
-
-import './theme-toggle.css';
 
 function toggleTheme() {
   if (colorScheme.current === 'dark') {
