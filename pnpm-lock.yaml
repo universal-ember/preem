@@ -5,11 +5,11 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@glimmer/validator': ^0.84.2
   '@glimmer/interfaces': ^0.84.2
-  ember-async-data: 1.0.1
-  ember-compatibility-helpers: 1.2.7
+  '@glimmer/validator': ^0.84.2
+  ember-async-data: 1.0.3
   ember-cli-babel: ^8.2.0
+  ember-compatibility-helpers: 1.2.7
 
 packageExtensionsChecksum: 7d456f94fcb212f3b99ec0fb4a0269f9
 
@@ -4105,10 +4105,10 @@ packages:
     engines: {node: '>=16.0.0'}
     hasBin: true
 
-  ember-async-data@1.0.1:
-    resolution: {integrity: sha512-R9nBxCZ9WDPMJpuGBODs8wV1PHXUbkSbrzVmL34R4aOWbx237yLBllJghQOwfJs1+D72wdzgxg/+J3DY43xz3g==}
+  ember-async-data@1.0.3:
+    resolution: {integrity: sha512-54OtoQwNi+/ZvPOVuT4t8fcHR9xL8N7kBydzcZSo6BIEsLYeXPi3+jUR8niWjfjXXhKlJ8EWXR0lTeHleTrxbw==}
     peerDependencies:
-      ember-source: ^4.8.4
+      ember-source: '>=4.8.4'
 
   ember-auto-import@2.10.0:
     resolution: {integrity: sha512-bcBFDYVTFHyqyq8BNvsj6UO3pE6Uqou/cNmee0WaqBgZ+1nQqFz0UE26usrtnFAT+YaFZSkqF2H36QW84k0/cg==}
@@ -13827,7 +13827,7 @@ snapshots:
       - bluebird
       - supports-color
 
-  ember-async-data@1.0.1(@babel/core@7.26.0)(ember-source@6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1)):
+  ember-async-data@1.0.3(@babel/core@7.26.0)(ember-source@6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1)):
     dependencies:
       '@ember/test-waiters': 3.1.0(@babel/core@7.26.0)
       '@embroider/addon-shim': 1.9.0
@@ -14303,7 +14303,7 @@ snapshots:
       '@glimmer/component': 2.0.0
       '@glimmer/tracking': 1.1.2
       babel-eslint: 10.1.0(eslint@8.57.1)
-      ember-async-data: 1.0.1(@babel/core@7.26.0)(ember-source@6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1))
+      ember-async-data: 1.0.3(@babel/core@7.26.0)(ember-source@6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1))
       ember-cached-decorator-polyfill: 1.0.2(@babel/core@7.26.0)(@glint/template@1.5.0)(ember-source@6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1))
       ember-modifier: 4.2.0(@babel/core@7.26.0)(ember-source@6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1))
       ember-source: 6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1)
@@ -18428,7 +18428,7 @@ snapshots:
       '@embroider/addon-shim': 1.9.0
       '@embroider/macros': 1.16.10(@babel/core@7.26.0)(@glint/template@1.5.0)
       decorator-transforms: 1.2.1(@babel/core@7.26.0)
-      ember-async-data: 1.0.1(@babel/core@7.26.0)(ember-source@6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1))
+      ember-async-data: 1.0.3(@babel/core@7.26.0)(ember-source@6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1))
       ember-cached-decorator-polyfill: 1.0.2(@babel/core@7.26.0)(@glint/template@1.5.0)(ember-source@6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1))
       ember-resources: 7.0.3(@babel/core@7.26.0)(@glimmer/component@2.0.0)(@glimmer/tracking@1.1.2)(@glint/template@1.5.0)(ember-source@6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1))
       ember-source: 6.1.0(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.97.1)
