@@ -6,12 +6,14 @@ import { Arrow } from './-private/icons.gts';
 
 import type { TOC } from '@ember/component/template-only';
 
-export const ExternalLink: TOC<{
+export interface Signature {
   Element: HTMLAnchorElement;
   Blocks: {
     default: [];
   };
-}> = <template>
+}
+
+export const ExternalLink: TOC<Signature> = <template>
   <PrimitiveExternalLink class='preem__external-link' ...attributes>
     <span class='preem__external-link__link-content'>{{yield}}</span>
     <Arrow />

@@ -42,7 +42,7 @@ import { ThemeToggle } from '@universal-ember/preem';
 ## Installation 
 
 ```bash 
-pnpm add preem 
+pnpm add @universal-ember/preem 
 ```
 
 ## Anatomy
