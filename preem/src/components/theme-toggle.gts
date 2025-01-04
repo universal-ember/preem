@@ -2,8 +2,8 @@ import './theme-toggle.css';
 
 import { on } from '@ember/modifier';
 
-import { Switch } from 'ember-primitives/components/switch';
 import { colorScheme } from 'ember-primitives/color-scheme';
+import { Switch } from 'ember-primitives/components/switch';
 
 import { Moon, Sun } from './-private/icons.gts';
 

@@ -41,7 +41,7 @@ const NameLink: TOC<{ Element: HTMLAnchorElement; Args: { href: string; name: st
     {{#if (isComponents @name)}}
       {{asComponent (titleize @name)}}
     {{else}}
-      {{(titleize @name)}}
+      {{titleize @name}}
     {{/if}}
   </Link>
 </template>;
