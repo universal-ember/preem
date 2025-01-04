@@ -5,11 +5,18 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     autoImport: {
-      watchDependencies: ['preem'],
+      watchDependencies: ['@universal-ember/preem'],
     },
     'ember-cli-babel': {
       enableTypeScriptTransform: true,
+     disableDecoratorTransforms: true,
     },
+ babel: {
+     plugins: [
+       // add the new transform.
+       require.resolve('decorator-transforms'),
+     ],
+   },
   });
 
   const { Webpack } = require('@embroider/webpack');
@@ -22,7 +29,6 @@ module.exports = function (defaults) {
     staticModifiers: true,
     staticComponents: true,
     staticEmberSource: true,
-    implicitModulesStrategy: 'packageNames',
     packagerOptions: {
       webpackConfig: {
         devtool: 'source-map',
