@@ -1,27 +1,29 @@
 {
   "version": "0.0.0",
   "private": true,
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:universal-ember/preem.git"
+  },
   "license": "MIT",
   "author": "",
   "scripts": {
-    "release": "changeset publish",
-    "build": "turbo run build --output-logs errors-only",
-    "start": "pnpm build; concurrently 'npm:_start:*' --prefix ' ' --restart-after 5000 --restart-tries -1",
     "_start:docs": "pnpm --filter docs-app start",
-    "_start:tests": "pnpm --filter test-app start",
     "_start:package": "pnpm --filter 'ember-primitives' start --no-watch.clearScreen",
-    "test": "turbo run test --output-logs errors-only",
+    "_start:tests": "pnpm --filter test-app start",
+    "build": "turbo run build --output-logs errors-only",
+    "lint": "turbo run _:lint --output-logs errors-only",
     "lint:fix": "turbo run _:lint:fix --output-logs errors-only",
-    "lint": "turbo run _:lint --output-logs errors-only"
+    "start": "pnpm build; concurrently 'npm:_start:*' --prefix ' ' --restart-after 5000 --restart-tries -1",
+    "test": "turbo run test --output-logs errors-only"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.2",
     "@glint/core": "^1.5.0",
     "@nullvoxpopuli/dev": "workspace:*",
     "concurrently": "^9.1.2",
     "prettier": "^3.4.2",
     "prettier-plugin-ember-template-tag": "^2.0.4",
+    "release-plan": "^0.11.0",
     "turbo": "^2.3.3",
     "typescript": "^5.2.2"
   },
@@ -30,26 +32,6 @@
     "node": ">= 22.11.x"
   },
   "pnpm": {
-    "overrides": {
-      "@glimmer/validator": "^0.84.2",
-      "@glimmer/interfaces": "^0.84.2",
-      "ember-async-data": "1.0.1",
-      "ember-compatibility-helpers": "1.2.7",
-      "ember-cli-babel": "^8.2.0"
-    },
-    "packageExtensions": {
-      "ember-qunit": {
-        "peerDependencies": {
-          "@ember/test-helpers": "^2.7.0 || >= 3.0.0"
-        }
-      },
-      "ember-headless-form": {
-        "dependencies": {
-          "ember-cached-decorator-polyfill": "*",
-          "ember-async-data": "^1.0.1"
-        }
-      }
-    },
     "peerDependencyRules": {
       "allowAny": [
         "typescript",
@@ -61,6 +43,26 @@
         "webpack",
         "rsvp"
       ]
+    },
+    "overrides": {
+      "@glimmer/interfaces": "^0.84.2",
+      "@glimmer/validator": "^0.84.2",
+      "ember-async-data": "1.0.1",
+      "ember-cli-babel": "^8.2.0",
+      "ember-compatibility-helpers": "1.2.7"
+    },
+    "packageExtensions": {
+      "ember-headless-form": {
+        "dependencies": {
+          "ember-async-data": "^1.0.1",
+          "ember-cached-decorator-polyfill": "*"
+        }
+      },
+      "ember-qunit": {
+        "peerDependencies": {
+          "@ember/test-helpers": "^2.7.0 || >= 3.0.0"
+        }
+      }
     }
   }
 }
