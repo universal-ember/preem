@@ -5,7 +5,7 @@ import { on } from '@ember/modifier';
 import { Switch } from 'ember-primitives';
 import { colorScheme } from 'ember-primitives/color-scheme';
 
-import { Moon, Sun } from './-private/icons';
+import { Moon, Sun } from './-private/icons.gts';
 
 import type { TOC } from '@ember/component/template-only';
 

@@ -9,26 +9,23 @@
     "unstable": "./bin/use-unstable-embroider.js"
   },
   "dependencies": {
-    "chalk": "^5.3.0",
-    "ember-apply": "^2.10.2",
-    "execa": "^8.0.1",
-    "fs-extra": "^11.1.1",
-    "latest-version": "^7.0.0"
+    "chalk": "^5.4.1",
+    "ember-apply": "^2.12.0",
+    "execa": "^9.5.2",
+    "fs-extra": "^11.2.0",
+    "latest-version": "^9.0.0"
   },
   "engines": {
-    "node": ">= 18"
-  },
-  "volta": {
-    "extends": "../package.json"
+    "node": ">= 22.11.x"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.2",
-    "@babel/eslint-parser": "^7.22.15",
-    "@nullvoxpopuli/eslint-configs": "^3.2.2",
-    "@typescript-eslint/eslint-plugin": "^6.6.0",
-    "@typescript-eslint/parser": "^6.6.0",
+    "@babel/core": "^7.26.0",
+    "@babel/eslint-parser": "^7.25.9",
+    "@nullvoxpopuli/eslint-configs": "^4.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.19.0",
     "eslint": "^8.48.0",
-    "prettier": "^3.0.3",
+    "prettier": "^3.4.2",
     "typescript": "^5.2.2"
   },
   "scripts": {
