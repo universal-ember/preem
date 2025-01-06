@@ -502,8 +502,8 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4(prettier@3.4.2)
       publint:
-        specifier: ^0.2.12
-        version: 0.2.12
+        specifier: ^0.3.0
+        version: 0.3.0
       rollup:
         specifier: ~4.29.1
         version: 4.29.1
@@ -2073,6 +2073,10 @@ packages:
   '@pnpm/write-project-manifest@5.0.6':
     resolution: {integrity: sha512-3qkKCftRE/HXzoWedyDuaMMUQzheDwx8AQXR0DnA9ylsBnZQYNut19Ado/gzi5+IvznaMcqrBszw57j3y1/ILw==}
     engines: {node: '>=16.14'}
+
+  '@publint/pack@0.1.0':
+    resolution: {integrity: sha512-NvV5jPAQIMCoHvaJ0ZhfouBJ2woFYYf+o6B7dCHGh/tLKSPVoxhjffi35xPuMHgOv65aTOKUzML5XwQF9EkDAA==}
+    engines: {node: '>=18'}
 
   '@rollup/plugin-babel@6.0.4':
     resolution: {integrity: sha512-YF7Y52kFdFT/xVSuVdjkV5ZdX/3YtmX0QulG+x0taQOtJdHYzVU61aSSkAgVJ7NOv6qPkIYiJSgSWWN/DM5sGw==}
@@ -5537,10 +5541,6 @@ packages:
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
 
-  ignore-walk@5.0.1:
-    resolution: {integrity: sha512-yemi4pMf51WKT7khInJqAvsIGzoqYXblnsz0ql8tM+yi1EKYTY1evX4NAbJrLL/Aanr2HyZeluqU+Oi7MGHokw==}
-    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
-
   ignore-walk@6.0.5:
     resolution: {integrity: sha512-VuuG0wCnjhnylG1ABXT3dAuIpTNDs/G8jlpmwXY03fXoXy/8ZK8/T+hMzt8L4WnrLCJgdybqgPagnF/f97cg3A==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -6787,10 +6787,6 @@ packages:
     resolution: {integrity: sha512-IO9QvjUMWxPQQhs60oOu10CRkWCiZzSUkzbXGGV9pviYl1fXYcvkzQ5jV9z8Y6un8ARoVRl4EtC6v6jNqbaJ/w==}
     engines: {node: '>=14.16'}
 
-  npm-bundled@2.0.1:
-    resolution: {integrity: sha512-gZLxXdjEzE/+mOstGDqR6b0EkhJ+kM6fxM6vUuckuctuVPh80Q6pw/rSZj9s4Gex9GxWtIicO1pc8DB9KZWudw==}
-    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
-
   npm-bundled@3.0.1:
     resolution: {integrity: sha512-+AvaheE/ww1JEwRHOrn4WHNzOxGtVp+adrg2AeZS/7KuxGUYFuBta98wYpfHBbJp6Tg6j1NKSEVHNcfZzJHQwQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -6798,10 +6794,6 @@ packages:
   npm-install-checks@6.3.0:
     resolution: {integrity: sha512-W29RiK/xtpCGqn6f3ixfRYGk+zRyr+Ew9F2E20BfXxT5/euLdA/Nm7fO7OeTGuAmTs30cpgInyJ0cYe708YTZw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
-
-  npm-normalize-package-bin@2.0.0:
-    resolution: {integrity: sha512-awzfKUO7v0FscrSpRoogyNm0sajikhBWpU0QMrW09AMi9n1PoKU6WaIqUzuJSQnpciZZmJ/jMZ2Egfmb/9LiWQ==}
-    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
 
   npm-normalize-package-bin@3.0.1:
     resolution: {integrity: sha512-dMxCf+zZ+3zeQZXKxmyuCKlIDPGuv8EF940xbkC4kQVDTtqoh6rJFO+JTKSA6/Rwi0getWmtuy4Itup0AMcaDQ==}
@@ -6814,11 +6806,6 @@ packages:
   npm-package-arg@12.0.1:
     resolution: {integrity: sha512-aDxjFfPV3Liw0WOBWlyZLMBqtbgbg03rmGvHDJa2Ttv7tIz+1oB5qWec4psCDFZcZi9b5XdGkPdQiJxOPzvQRQ==}
     engines: {node: ^18.17.0 || >=20.5.0}
-
-  npm-packlist@5.1.3:
-    resolution: {integrity: sha512-263/0NGrn32YFYi4J533qzrQ/krmmrWwhKkzwTuM4f/07ug51odoaNjUexxO4vxlzURHcmYMH1QjvHjsNDKLVg==}
-    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
-    hasBin: true
 
   npm-packlist@8.0.2:
     resolution: {integrity: sha512-shYrPFIS/JLP4oQmAwDyk5HcyysKW8/JLTEA32S0Z5TzvpaeeX2yMFfoK1fjEBnCBvVyIB/Jj/GBFdm0wsgzbA==}
@@ -7048,6 +7035,9 @@ packages:
   package-json@8.1.1:
     resolution: {integrity: sha512-cbH9IAIJHNj9uXi196JVsRlt7cHKak6u/e6AkL/bkRelZ7rlL3X1YKxsZwa36xipOEKAsdtmaG6aAJoM1fx2zA==}
     engines: {node: '>=14.16'}
+
+  package-manager-detector@0.2.8:
+    resolution: {integrity: sha512-ts9KSdroZisdvKMWVAVCXiKqnqNfXz4+IbrBG8/BWx/TR5le+jfenvoBuIZ6UWM9nz47W7AbD9qYfAwfWMIwzA==}
 
   pacote@17.0.7:
     resolution: {integrity: sha512-sgvnoUMlkv9xHwDUKjKQFXVyUi8dtJGKp3vg6sYy+TxbDic5RjZCHF3ygv0EJgNRZ2GfRONjlKPUfokJ9lDpwQ==}
@@ -7410,9 +7400,9 @@ packages:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
 
-  publint@0.2.12:
-    resolution: {integrity: sha512-YNeUtCVeM4j9nDiTT2OPczmlyzOkIXNtdDZnSuajAxS/nZ6j3t7Vs9SUB4euQNddiltIwu7Tdd3s+hr08fAsMw==}
-    engines: {node: '>=16'}
+  publint@0.3.0:
+    resolution: {integrity: sha512-B7efom03c86OGqN1Jp2mDduiamb5apEuolvlbUeHaa14geCzJKz35oPIiKoXPMvM3tGABEZ1oLfY6xJNvOh69g==}
+    engines: {node: '>=18'}
     hasBin: true
 
   pump@3.0.2:
@@ -11493,6 +11483,8 @@ snapshots:
       json5: 2.2.3
       write-file-atomic: 5.0.1
       write-yaml-file: 5.0.0
+
+  '@publint/pack@0.1.0': {}
 
   '@rollup/plugin-babel@6.0.4(@babel/core@7.26.0)(@types/babel__core@7.20.5)(rollup@4.29.1)':
     dependencies:
@@ -16249,10 +16241,6 @@ snapshots:
 
   ieee754@1.2.1: {}
 
-  ignore-walk@5.0.1:
-    dependencies:
-      minimatch: 5.1.6
-
   ignore-walk@6.0.5:
     dependencies:
       minimatch: 9.0.5
@@ -17721,10 +17709,6 @@ snapshots:
 
   normalize-url@8.0.1: {}
 
-  npm-bundled@2.0.1:
-    dependencies:
-      npm-normalize-package-bin: 2.0.0
-
   npm-bundled@3.0.1:
     dependencies:
       npm-normalize-package-bin: 3.0.1
@@ -17732,8 +17716,6 @@ snapshots:
   npm-install-checks@6.3.0:
     dependencies:
       semver: 7.6.3
-
-  npm-normalize-package-bin@2.0.0: {}
 
   npm-normalize-package-bin@3.0.1: {}
 
@@ -17750,13 +17732,6 @@ snapshots:
       proc-log: 5.0.0
       semver: 7.6.3
       validate-npm-package-name: 6.0.0
-
-  npm-packlist@5.1.3:
-    dependencies:
-      glob: 8.1.0
-      ignore-walk: 5.0.1
-      npm-bundled: 2.0.1
-      npm-normalize-package-bin: 2.0.0
 
   npm-packlist@8.0.2:
     dependencies:
@@ -18028,6 +18003,8 @@ snapshots:
       registry-auth-token: 5.0.3
       registry-url: 6.0.1
       semver: 7.6.3
+
+  package-manager-detector@0.2.8: {}
 
   pacote@17.0.7:
     dependencies:
@@ -18346,9 +18323,10 @@ snapshots:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
 
-  publint@0.2.12:
+  publint@0.3.0:
     dependencies:
-      npm-packlist: 5.1.3
+      '@publint/pack': 0.1.0
+      package-manager-detector: 0.2.8
       picocolors: 1.1.1
       sade: 1.8.1
 
