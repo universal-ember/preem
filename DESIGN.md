@@ -154,6 +154,64 @@ When this document and that CSS disagree, the CSS wins.
 > [view this document rendered on the docs site](https://nullui.vercel.app/Docs/1-get-started/design).
 > On GitHub they read as source.
 
+```gjs live no-shadow
+import { Button } from "nvp.ui/button";
+
+<template>
+  <div class="hero">
+    <p class="kicker">nvp.ui</p>
+    <p class="display">Professional, sleek, token-driven.</p>
+    <p class="sub">
+      Surfaces for depth, hairline borders for structure, the platform's own type — and light and
+      dark as equals.
+    </p>
+    <p class="actions">
+      <Button @variant="primary">Get started</Button>
+      <Button>Browse components</Button>
+    </p>
+  </div>
+
+  <style>
+    @scope {
+      .hero {
+        background: var(--gradient-hero);
+        border-radius: var(--radius);
+        color: white;
+        display: grid;
+        gap: var(--gap-3);
+        justify-items: start;
+        padding: calc(3 * var(--padding-4)) calc(2 * var(--padding-4));
+      }
+      p {
+        margin: 0;
+      }
+      .kicker {
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        opacity: 0.85;
+        text-transform: uppercase;
+      }
+      .display {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+      }
+      .sub {
+        max-width: 34rem;
+        opacity: 0.9;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap-2);
+        margin-top: var(--gap-2);
+      }
+    }
+  </style>
+</template>
+```
+
 ## Overview
 
 Professional and sleek.
@@ -189,42 +247,70 @@ Semantic roles, not palettes — the values live in the tokens:
 
 Accents are cool and saturated (cyan / periwinkle / pink) against a near-neutral canvas.
 Don't introduce new hues — derive with `color-mix()` from these tokens.
-The same tokens, rendered live in both themes:
+The palette follows the active theme — flip the site's theme toggle and every swatch re-keys:
 
 ```gjs live no-shadow
-import { Theme } from "nvp.ui/theme";
-
-const Swatches = <template>
-  <div class="swatch-row">
-    <div class="swatch" style="background: var(--color-page-background)">page-background</div>
-    <div
-      class="swatch"
-      style="background: var(--color-text); color: var(--color-page-background)"
-    >text</div>
-    <div class="swatch" style="background: var(--color-primary); color: #121212">primary</div>
-    <div class="swatch" style="background: var(--color-secondary); color: #121212">secondary</div>
-    <div class="swatch" style="background: var(--color-danger); color: #121212">danger</div>
-    <div class="swatch" style="background: var(--border-color)">border</div>
-  </div>
-</template>;
-
 <template>
-  <Theme @name="light"><Swatches /></Theme>
-  <Theme @name="dark"><Swatches /></Theme>
+  <div class="palette">
+    <div class="swatch">
+      <div class="field" style="background: var(--color-page-background)"></div>
+      <p class="token">--color-page-background</p>
+      <p class="use">The canvas; surfaces derive from it</p>
+    </div>
+    <div class="swatch">
+      <div class="field" style="background: var(--color-text)"></div>
+      <p class="token">--color-text</p>
+      <p class="use">Body text, near-max contrast</p>
+    </div>
+    <div class="swatch">
+      <div class="field" style="background: var(--color-primary)"></div>
+      <p class="token">--color-primary</p>
+      <p class="use">Primary actions, accents, accent-color</p>
+    </div>
+    <div class="swatch">
+      <div class="field" style="background: var(--color-secondary)"></div>
+      <p class="token">--color-secondary</p>
+      <p class="use">Secondary actions</p>
+    </div>
+    <div class="swatch">
+      <div class="field" style="background: var(--color-danger)"></div>
+      <p class="token">--color-danger</p>
+      <p class="use">Destructive actions</p>
+    </div>
+    <div class="swatch">
+      <div class="field" style="background: var(--border-color)"></div>
+      <p class="token">--border-color</p>
+      <p class="use">Hairline structural borders</p>
+    </div>
+  </div>
 
   <style>
     @scope {
-      .swatch-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--gap-2);
-        padding: var(--padding-4);
+      .palette {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+        gap: var(--gap-4);
+        padding: var(--padding-2);
       }
       .swatch {
         border: var(--border-width) var(--border-style) var(--border-color);
         border-radius: var(--radius);
-        padding: var(--padding-2) var(--padding-3);
-        font-size: 80%;
+        overflow: hidden;
+      }
+      .field {
+        border-bottom: var(--border-width) var(--border-style) var(--border-color);
+        height: 4.5rem;
+      }
+      .token {
+        font-family: monospace;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin: var(--gap-2) var(--padding-3) 0;
+      }
+      .use {
+        color: color-mix(in oklab, var(--color-text) 70%, transparent);
+        font-size: 0.85rem;
+        margin: var(--gap-1) var(--padding-3) var(--padding-3);
       }
     }
   </style>
@@ -237,6 +323,39 @@ Theme is driven by `color-scheme`, overridable at any DOM level via the `Theme` 
 `theme-light` / `theme-dark` classes — nestable indefinitely. Because class-based theming is in
 play, `light-dark()` cannot be used for anything that must respond to those classes.
 
+```gjs live no-shadow
+import { Theme } from "nvp.ui/theme";
+import { Button } from "nvp.ui/button";
+
+<template>
+  <Theme @name="light">
+    <div class="strip">
+      light
+      <Button @variant="primary">Primary</Button>
+      <Theme @name="dark">
+        <div class="strip">
+          dark, nested
+          <Button @variant="primary">Primary</Button>
+        </div>
+      </Theme>
+    </div>
+  </Theme>
+
+  <style>
+    @scope {
+      .strip {
+        align-items: center;
+        border-radius: var(--radius);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap-3);
+        padding: var(--padding-4);
+      }
+    }
+  </style>
+</template>
+```
+
 ## Typography
 
 - Text: `--font` — the platform's own sans-serif UI font. No webfonts, ever: the system defers
@@ -246,16 +365,72 @@ play, `light-dark()` cannot be used for anything that must respond to those clas
 
 ```gjs live no-shadow
 <template>
-  <p>The platform's own sans-serif, high contrast against the page — with
-    <code>inline code</code>
-    in the browser's monospace.</p>
+  <div class="specimens">
+    <div class="row">
+      <p class="meta">
+        <span class="token">--font</span>
+        <span class="spec">ui-sans-serif · the platform's own</span>
+      </p>
+      <p class="sample">Professional, sleek Ember apps — quickly.</p>
+    </div>
+    <div class="row">
+      <p class="meta">
+        <span class="token">--line-height</span>
+        <span class="spec">1.5rem baseline rhythm</span>
+      </p>
+      <p class="sample body">
+        Body copy sits on a 1.5rem rhythm, so long paragraphs stay airy without any per-component
+        line-height overrides — the baseline is a token, like everything else.
+      </p>
+    </div>
+    <div class="row">
+      <p class="meta">
+        <span class="token">monospace</span>
+        <span class="spec">browser default · code</span>
+      </p>
+      <p class="sample"><code>import { Button } from "nvp.ui/button";</code></p>
+    </div>
+  </div>
 
   <style>
     @scope {
-      p {
-        font-family: var(--font);
-        line-height: var(--line-height);
+      .specimens {
+        display: grid;
         padding: var(--padding-2);
+      }
+      .row {
+        border-top: var(--border-width) var(--border-style) var(--border-color);
+        display: grid;
+        gap: var(--gap-2);
+        padding: var(--padding-4) 0;
+      }
+      .row:first-child {
+        border-top: none;
+      }
+      .meta {
+        align-items: baseline;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap-3);
+        margin: 0;
+      }
+      .token {
+        font-family: monospace;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      .spec {
+        color: color-mix(in oklab, var(--color-text) 60%, transparent);
+        font-size: 0.85rem;
+      }
+      .sample {
+        font-size: 1.5rem;
+        line-height: var(--line-height);
+        margin: 0;
+      }
+      .sample.body {
+        font-size: 1rem;
+        max-width: 40rem;
       }
     }
   </style>
@@ -464,6 +639,64 @@ global tokens) for local tuning. Variants are args that map onto attributes
 (`<Button @variant="primary">` renders `data-variant="primary"`), state is expressed through
 `aria-*` attributes, and native attributes/modifiers are forwarded through `...attributes` —
 not framework-specific args.
+
+Composed together, the pieces read as one system:
+
+```gjs live no-shadow
+import { Avatar, BrowserWindow, Button, ToggleButton } from "nvp.ui";
+import { cell } from "ember-resources";
+
+const starred = cell(false);
+const toggle = () => starred.set(!starred.current);
+
+<template>
+  <BrowserWindow @os="mac" @url="https://your-app.example">
+    <div class="screen">
+      <div class="who">
+        <Avatar @src="/images/sc2/nova.jpg" @alt="Nova" @size="small" />
+        <p>Nova<br /><span class="quiet">Product designer</span></p>
+      </div>
+      <div class="row">
+        <Button>Save</Button>
+        <Button @variant="primary">Publish</Button>
+        <Button @variant="danger">Delete</Button>
+        <ToggleButton @pressed={{starred.current}} @onClick={{toggle}}>
+          {{if starred.current "★ Starred" "☆ Star"}}
+        </ToggleButton>
+      </div>
+    </div>
+  </BrowserWindow>
+
+  <style>
+    @scope {
+      .screen {
+        display: grid;
+        gap: var(--gap-4);
+        padding: var(--padding-4);
+      }
+      .who {
+        align-items: center;
+        display: flex;
+        gap: var(--gap-3);
+      }
+      .who p {
+        font-weight: 600;
+        margin: 0;
+      }
+      .quiet {
+        color: color-mix(in oklab, var(--color-text) 65%, transparent);
+        font-size: 0.85rem;
+        font-weight: 400;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap-2);
+      }
+    }
+  </style>
+</template>
+```
 
 ### Structure
 
