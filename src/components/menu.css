@@ -19,9 +19,9 @@
   align-items: center;
   padding: var(--button-padding-y) var(--button-padding-x);
   line-height: var(--line-height);
-  border-radius: var(--button-border-radius);
-  border-width: var(--button-border-width);
-  border-style: var(--button-border-style);
+  border-radius: var(--button-border-radius, var(--radius));
+  border-width: var(--button-border-width, var(--border-width));
+  border-style: var(--button-border-style, var(--border-style));
   box-shadow: var(--button-shadow);
   cursor: pointer;
   font-family: var(--font);

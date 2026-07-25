@@ -58,9 +58,14 @@
   /* Components */
   --button-border-color-mix: rgb(100, 100, 100);
   --button-hover-color-mix: rgb(255, 255, 255);
-  --button-border-radius: var(--radius);
-  --button-border-width: var(--border-width);
-  --button-border-style: var(--border-style);
+  /**
+   * NOTE: --button-border-{radius,width,style} are intentionally NOT declared here.
+   *       A custom property resolves its var()s where it is *declared*, so
+   *       `--button-border-radius: var(--radius)` at :root would freeze the
+   *       root's --radius and ignore any subtree override. The components
+   *       instead use `var(--button-border-radius, var(--radius))` so the
+   *       global token resolves at the element.
+   */
   --button-border-color: var(--border-color);
 
   --reason-shadow: var(--shadow-md);
