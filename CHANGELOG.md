@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2026-08-08)
+
+* nvp.ui 0.9.1 (patch)
+
+#### :bug: Bug Fix
+* `nvp.ui`
+  * [#112](https://github.com/NullVoxPopuli/nvp.ui/pull/112) Export the components' CSS so consumers can reach the tokens ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))
+
+#### :memo: Documentation
+* `nvp.ui`
+  * [#110](https://github.com/NullVoxPopuli/nvp.ui/pull/110) Add DESIGN.md, rendered in the docs as Get Started > Design ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))
+
+#### Committers: 1
+- @NullVoxPopuli's reduced-access machine account for AI usage ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))
+
 ## Release (2026-07-17)
 
 * nvp.ui 0.9.0 (minor)
