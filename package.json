@@ -21,6 +21,7 @@
       "types": "./declarations/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./*.css": "./dist/components/*.css",
     "./*": {
       "types": "./declarations/components/*.d.ts",
       "default": "./dist/components/*.js"
