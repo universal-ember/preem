@@ -2,6 +2,17 @@
 
 ## Release (2026-08-08)
 
+* nvp.ui 0.9.2 (patch)
+
+#### :bug: Bug Fix
+* `nvp.ui`
+  * [#113](https://github.com/NullVoxPopuli/nvp.ui/pull/113) Fix typo in CSS variable name for focus ring ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
+## Release (2026-08-08)
+
 * nvp.ui 0.9.1 (patch)
 
 #### :bug: Bug Fix
