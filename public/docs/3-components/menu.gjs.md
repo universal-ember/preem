@@ -49,6 +49,49 @@ const noop = () => {};
 </template>
 ```
 
+## Account switcher
+
+A real-world composition: a sidebar's account switcher. The `bare`
+variant removes the trigger's button chrome so it aligns flush with
+the navigation around it, and `LinkItem` keeps switching as plain
+navigation — the current account is marked with `aria-current`.
+
+```gjs live preview no-shadow
+import { Menu, Navigation, NavigationList } from "nvp.ui";
+import { PortalTargets } from "ember-primitives";
+
+const accounts = [
+  { slug: "nullvoxp", name: "NullVoxPopuli", current: true },
+  { slug: "glimdown", name: "glimdown", current: false },
+];
+
+<template>
+  <PortalTargets />
+  <div style="max-width: 14rem;">
+    <Navigation aria-label="Example sidebar">
+      <Menu @variant="bare" as |menu|>
+        <menu.Trigger style="width: 100%" aria-label="Switch account">
+          NullVoxPopuli
+        </menu.Trigger>
+
+        <menu.Content as |Items|>
+          {{#each accounts as |account|}}
+            <Items.LinkItem @href="#{{account.slug}}" aria-current={{if account.current "true"}}>
+              {{account.name}}
+            </Items.LinkItem>
+          {{/each}}
+        </menu.Content>
+      </Menu>
+
+      <NavigationList @label="Manage">
+        <li><a href="#links">Links</a></li>
+        <li><a href="#users">Users</a></li>
+      </NavigationList>
+    </Navigation>
+  </div>
+</template>
+```
+
 ## Installation
 
 ```bash
@@ -74,9 +117,9 @@ import { ComponentSignature } from "kolay";
 
 ### State Attributes
 
-|   attribute    | values                                      | description                  |
-| :------------: | :------------------------------------------ | :--------------------------- |
-| `data-variant` | `primary`, `secondary`, `danger`, `default` | Trigger button color variant |
+|   attribute    | values                                              | description                                                     |
+| :------------: | :-------------------------------------------------- | :-------------------------------------------------------------- |
+| `data-variant` | `primary`, `secondary`, `danger`, `default`, `bare` | Trigger button color variant (`bare` removes the button chrome) |
 
 ### Styling
 

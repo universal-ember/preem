@@ -26,6 +26,7 @@ const Reasoning = <template>
   <Button @variant="primary">Primary</Button>
   <Button @variant="secondary">Secondary</Button>
   <Button @variant="danger">Danger</Button>
+  <Button @variant="bare">Bare</Button>
 
   <br /><br />
 

@@ -145,4 +145,63 @@ module("Menu", function (hooks) {
     await triggerKeyEvent(".nvp__menu__content", "keydown", "Escape");
     assert.dom(".nvp__menu__content").doesNotExist();
   });
+
+  test("@variant=bare marks the trigger", async function (assert) {
+    await render(
+      <template>
+        <PortalTargets />
+        <Menu @variant="bare" as |menu|>
+          <menu.Trigger>Accounts</menu.Trigger>
+          <menu.Content as |Items|>
+            <Items.Item>One</Items.Item>
+          </menu.Content>
+        </Menu>
+      </template>,
+    );
+
+    assert.dom(".nvp__menu__trigger").hasAttribute("data-variant", "bare");
+  });
+
+  test("the keyboard hints render inside the portal, next to the content", async function (assert) {
+    await render(
+      <template>
+        <PortalTargets />
+        <Menu as |menu|>
+          <menu.Trigger>Open</menu.Trigger>
+          <menu.Content as |Items|>
+            <Items.Item>Item 1</Items.Item>
+          </menu.Content>
+        </Menu>
+      </template>,
+    );
+
+    await click(".nvp__menu__trigger");
+
+    // Anchor positioning requires the hints and the content to share
+    // a containing block: both live in the popover portal target.
+    const portal = document.querySelector(
+      '[data-portal-name="ember-primitives__portal-targets__popover"]',
+    );
+
+    assert.dom(".nvp__menu__kbd-hints", portal).exists();
+  });
+
+  test("LinkItem renders an anchor with the given href", async function (assert) {
+    await render(
+      <template>
+        <PortalTargets />
+        <Menu as |menu|>
+          <menu.Trigger>Open</menu.Trigger>
+          <menu.Content as |Items|>
+            <Items.LinkItem @href="/somewhere">Somewhere</Items.LinkItem>
+          </menu.Content>
+        </Menu>
+      </template>,
+    );
+
+    await click(".nvp__menu__trigger");
+
+    assert.dom("a.nvp__menu__link-item").hasAttribute("href", "/somewhere");
+    assert.dom("a.nvp__menu__link-item").hasText("Somewhere");
+  });
 });
