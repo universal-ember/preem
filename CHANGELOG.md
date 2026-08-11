@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2026-08-11)
+
+* nvp.ui 0.10.0 (minor)
+
+#### :rocket: Enhancement
+* `nvp.ui`
+  * [#115](https://github.com/NullVoxPopuli/nvp.ui/pull/115) Menu: portal the keyboard hints; add a bare variant to Menu + Button ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :bug: Bug Fix
+* `nvp.ui`
+  * [#115](https://github.com/NullVoxPopuli/nvp.ui/pull/115) Menu: portal the keyboard hints; add a bare variant to Menu + Button ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2026-08-08)
 
 * nvp.ui 0.9.2 (patch)
