@@ -8,6 +8,8 @@ import { hash } from "@ember/helper";
 
 import { Key } from "ember-primitives/components/keys";
 import { Menu as PrimitiveMenu } from "ember-primitives/components/menu";
+import { Portal } from "ember-primitives/components/portal";
+import { TARGETS } from "ember-primitives/components/portal-targets";
 
 import type { TOC } from "@ember/component/template-only";
 import type { ComponentLike } from "@glint/template";
@@ -16,9 +18,13 @@ export interface Signature {
   Element: null;
   Args: {
     /**
-     * Color variant for the trigger button
+     * Color variant for the trigger button.
+     *
+     * `bare` removes the button chrome entirely (background, border,
+     * shadow) so the trigger can align with surrounding content —
+     * e.g. as a sidebar's account switcher.
      */
-    variant?: "primary" | "secondary" | "danger" | "default";
+    variant?: "primary" | "secondary" | "danger" | "default" | "bare";
     /**
      * Placement of the menu content relative to the trigger.
      * Uses floating-ui placement values.
@@ -88,11 +94,19 @@ const StyledContent = <template>
     }}
   </@Content>
   {{#if @isOpen}}
-    <div class="nvp__menu__kbd-hints surface elevation-lg">
-      press
-      <Key>esc</Key>
-      to close
-    </div>
+    {{! The hints anchor (CSS anchor positioning) to the portaled menu
+        content, so they must live in the same portal: rendered inline,
+        an ancestor with layout containment (e.g. a container query
+        container) would become their containing block, the anchor
+        would stop being acceptable, and the hints would land at the
+        static position instead. }}
+    <Portal @to={{TARGETS.popover}} @append={{true}}>
+      <div class="nvp__menu__kbd-hints surface elevation-lg">
+        press
+        <Key>esc</Key>
+        to close
+      </div>
+    </Portal>
   {{/if}}
 </template>;
 

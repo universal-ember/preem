@@ -60,6 +60,31 @@
     --button-hover-color-mix: #000;
     --button-interact-spread: -1px;
   }
+
+  /**
+   * No button chrome at all: the trigger reads as regular content
+   * (a sidebar entry, a toolbar label) until interacted with, and
+   * aligns flush with its surroundings. Hover/press feedback matches
+   * the menu items' highlight instead of the button color math.
+   */
+  &[data-variant="bare"] {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    justify-content: start;
+    text-align: left;
+
+    &:hover,
+    &:focus-visible {
+      background: color-mix(in oklab, var(--color-primary) 20%, transparent);
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    &:active {
+      background: color-mix(in oklab, var(--color-primary) 35%, transparent);
+    }
+  }
 }
 
 /**

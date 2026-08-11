@@ -38,8 +38,11 @@ export interface Signature {
 
     /**
      * What colors to make the button.
+     *
+     * `bare` removes the button chrome entirely (background, border,
+     * shadow) so the button aligns flush with surrounding content.
      */
-    variant?: "danger" | "primary" | "secondary" | "default" | undefined;
+    variant?: "danger" | "primary" | "secondary" | "default" | "bare" | undefined;
 
     /**
      * Content before the button contents (such as for an icon)

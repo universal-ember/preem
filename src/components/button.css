@@ -73,6 +73,29 @@
     --button-background-color: var(--color-danger);
   }
 
+  /**
+   * No button chrome at all: reads as regular content until
+   * interacted with, and aligns flush with its surroundings.
+   */
+  &[data-variant="bare"] {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    justify-content: start;
+    text-align: left;
+
+    &:hover,
+    &:focus-visible {
+      background: color-mix(in oklab, var(--color-primary) 20%, transparent);
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    &:active {
+      background: color-mix(in oklab, var(--color-primary) 35%, transparent);
+    }
+  }
+
   &:hover {
     --button-hover-mix: 30%;
     --button-interact-spread: 1px;
